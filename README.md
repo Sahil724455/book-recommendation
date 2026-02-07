@@ -55,7 +55,7 @@ book-recommendation/
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/book-recommendation.git
+git clone https://github.com/Sahil724455/book-recommendation.git
 cd book-recommendation
 
 # Create a virtual environment (optional but recommended)
