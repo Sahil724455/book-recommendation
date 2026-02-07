@@ -1,0 +1,101 @@
+book_id,title,author,genre,year,description
+1,To Kill a Mockingbird,Harper Lee,Fiction,1960,A classic novel about racial injustice and childhood innocence in the American South through the eyes of young Scout Finch.
+2,1984,George Orwell,Fiction,1949,"A dystopian novel set in a totalitarian society ruled by Big Brother, exploring themes of surveillance, truth, and freedom."
+3,The Great Gatsby,F. Scott Fitzgerald,Fiction,1925,"A tale of wealth, love, and the American Dream set in the Jazz Age, following the mysterious millionaire Jay Gatsby."
+4,Pride and Prejudice,Jane Austen,Fiction,1813,A romantic novel about the complex relationship between Elizabeth Bennet and Mr. Darcy in Regency-era England.
+5,The Catcher in the Rye,J.D. Salinger,Fiction,1951,A coming-of-age story following teenager Holden Caulfield as he navigates alienation and loss in New York City.
+6,Dune,Frank Herbert,Science Fiction,1965,"An epic science fiction saga set on the desert planet Arrakis, exploring politics, religion, and ecology in a far future universe."
+7,Ender's Game,Orson Scott Card,Science Fiction,1985,"A young genius is recruited to a military academy in space to prepare for an alien invasion, facing moral dilemmas along the way."
+8,The Hitchhiker's Guide to the Galaxy,Douglas Adams,Science Fiction,1979,A comedic science fiction adventure following Arthur Dent across the galaxy after Earth is demolished for a hyperspace bypass.
+9,Neuromancer,William Gibson,Science Fiction,1984,A groundbreaking cyberpunk novel about a washed-up computer hacker hired for the ultimate hack in a dystopian future.
+10,Foundation,Isaac Asimov,Science Fiction,1951,A mathematician predicts the fall of the Galactic Empire and establishes a foundation to preserve knowledge and shorten the dark age.
+11,The Girl with the Dragon Tattoo,Stieg Larsson,Mystery,2005,"A journalist and a brilliant hacker investigate a decades-old disappearance, uncovering dark family secrets and corruption."
+12,Gone Girl,Gillian Flynn,Mystery,2012,A psychological thriller about a wife's disappearance and the dark secrets lurking beneath a seemingly perfect marriage.
+13,The Da Vinci Code,Dan Brown,Mystery,2003,"A symbologist unravels a trail of clues hidden in the works of Leonardo da Vinci, leading to a shocking historical secret."
+14,And Then There Were None,Agatha Christie,Mystery,1939,Ten strangers are lured to an isolated island where they are killed one by one according to a nursery rhyme.
+15,The Silent Patient,Alex Michaelides,Mystery,2019,A famous painter shoots her husband and then never speaks again; a psychotherapist becomes obsessed with uncovering her motive.
+16,Harry Potter and the Sorcerer's Stone,J.K. Rowling,Fantasy,1997,A young orphan discovers he is a wizard and begins his education at Hogwarts School of Witchcraft and Wizardry.
+17,The Lord of the Rings,J.R.R. Tolkien,Fantasy,1954,An epic fantasy quest to destroy the One Ring and save Middle-earth from the Dark Lord Sauron.
+18,A Game of Thrones,George R.R. Martin,Fantasy,1996,"Noble families vie for control of the Iron Throne in a sprawling epic of political intrigue, war, and supernatural threats."
+19,The Name of the Wind,Patrick Rothfuss,Fantasy,2007,"A legendary figure tells the true story of his life, from orphaned troupe performer to the most notorious wizard of his age."
+20,The Hobbit,J.R.R. Tolkien,Fantasy,1937,A homebody hobbit is swept into an epic quest to reclaim a dwarven kingdom and its treasure from a dragon.
+21,Sapiens: A Brief History of Humankind,Yuval Noah Harari,Non-Fiction,2011,"An exploration of how Homo sapiens came to dominate the world through cognitive, agricultural, and scientific revolutions."
+22,Educated,Tara Westover,Non-Fiction,2018,A memoir about a woman who grows up in a survivalist family and eventually earns a PhD from Cambridge University.
+23,"Thinking, Fast and Slow",Daniel Kahneman,Non-Fiction,2011,A Nobel laureate explores the two systems that drive the way we think: fast intuitive thinking and slow deliberate thinking.
+24,The Immortal Life of Henrietta Lacks,Rebecca Skloot,Non-Fiction,2010,"The story of Henrietta Lacks, whose cancer cells were taken without consent and became one of the most important tools in medicine."
+25,Atomic Habits,James Clear,Non-Fiction,2018,A practical guide to building good habits and breaking bad ones using small behavioral changes and the science of habit formation.
+26,The Notebook,Nicholas Sparks,Romance,1996,A sweeping love story about a couple separated by class differences who reunite years later with passion still burning.
+27,Outlander,Diana Gabaldon,Romance,1991,A WWII nurse is transported back to 18th-century Scotland where she falls in love with a Highland warrior.
+28,Me Before You,Jojo Moyes,Romance,2012,"A young woman becomes a caretaker for a paralyzed man, and they form an unexpected bond that changes both their lives."
+29,The Fault in Our Stars,John Green,Romance,2012,Two teenagers with cancer fall in love and embark on a journey to Amsterdam to meet their favorite author.
+30,Beach Read,Emily Henry,Romance,2020,Two writers with opposite styles challenge each other to write in the other's genre during a summer at neighboring beach houses.
+31,The Shining,Stephen King,Horror,1977,A family becomes caretakers of an isolated hotel for the winter where supernatural forces drive the father to madness.
+32,Dracula,Bram Stoker,Horror,1897,The classic gothic novel about Count Dracula's attempt to move from Transylvania to England to spread the undead curse.
+33,It,Stephen King,Horror,1986,A group of childhood friends reunite to confront an evil entity that takes the form of a terrifying clown.
+34,Mexican Gothic,Silvia Moreno-Garcia,Horror,2020,A young socialite investigates her cousin's mysterious illness at a decaying English mansion in 1950s Mexico.
+35,The Haunting of Hill House,Shirley Jackson,Horror,1959,"Four people stay in a notoriously haunted house as part of a paranormal investigation, facing terrifying psychological horror."
+36,How to Win Friends and Influence People,Dale Carnegie,Self-Help,1936,"A timeless guide to improving social skills, building relationships, and influencing others through empathy and communication."
+37,The 7 Habits of Highly Effective People,Stephen Covey,Self-Help,1989,A principle-centered approach to personal and professional effectiveness through developing proactive and synergistic habits.
+38,The Power of Now,Eckhart Tolle,Self-Help,1997,A spiritual guide to living in the present moment and freeing yourself from the tyranny of the thinking mind.
+39,Grit: The Power of Passion and Perseverance,Angela Duckworth,Self-Help,2016,Research showing that sustained passion and persistence matter more than talent in achieving long-term success.
+40,Mindset: The New Psychology of Success,Carol S. Dweck,Self-Help,2006,"Explores the difference between a fixed mindset and a growth mindset, and how changing your beliefs can change your life."
+41,"Guns, Germs, and Steel",Jared Diamond,History,1997,"An examination of why certain civilizations rose to power, focusing on geography, agriculture, and technology as key factors."
+42,The Diary of a Young Girl,Anne Frank,History,1947,"The diary of a Jewish girl hiding from Nazi persecution in Amsterdam during World War II, showing resilience and hope."
+43,A People's History of the United States,Howard Zinn,History,1980,"American history told from the perspective of marginalized groups including Native Americans, slaves, and workers."
+44,The Silk Roads,Peter Frankopan,History,2015,A fresh perspective on world history centered on the ancient trade routes connecting East and West.
+45,Homo Deus: A Brief History of Tomorrow,Yuval Noah Harari,History,2015,"A look at humanity's future as technology and biology converge, exploring questions of immortality and artificial intelligence."
+46,A Brief History of Time,Stephen Hawking,Science,1988,"A landmark popular science book explaining cosmology, black holes, and the nature of time for general readers."
+47,The Gene: An Intimate History,Siddhartha Mukherjee,Science,2016,"The story of the gene from its discovery to cutting-edge genetic engineering, intertwining science with personal narrative."
+48,Cosmos,Carl Sagan,Science,1980,"An awe-inspiring journey through the universe exploring the origins of life, galaxies, and humanity's place in the cosmos."
+49,The Selfish Gene,Richard Dawkins,Science,1976,"A revolutionary look at evolution from the gene's perspective, introducing the concept of the meme and selfish genetic replication."
+50,Silent Spring,Rachel Carson,Science,1962,A groundbreaking environmental science book documenting the harmful effects of pesticides on ecosystems and human health.
+51,It Ends with Us,Colleen Hoover,Romance,2016,"A young woman in a new relationship discovers unsettling parallels between her partner and her abusive father, forcing painful choices about love."
+52,The Hating Game,Sally Thorne,Romance,2016,Two executive assistants who despise each other find their rivalry slowly transforming into an undeniable romantic attraction.
+53,People We Meet on Vacation,Emily Henry,Romance,2021,"Two best friends who take annual vacations together had a falling out two years ago, and one last trip might fix everything or ruin it forever."
+54,The Kiss Quotient,Helen Hoang,Romance,2018,"A woman with Asperger's hires a professional escort to teach her about intimacy, but real feelings soon complicate the arrangement."
+55,"Red, White & Royal Blue",Casey McQuiston,Romance,2019,The son of the US President and the Prince of Wales turn their public feud into a secret romance that could shake two nations.
+56,The Spanish Love Deception,Elena Armas,Romance,2021,"A woman asks her annoying coworker to pose as her boyfriend at a wedding in Spain, leading to unexpected sparks and genuine feelings."
+57,Book Lovers,Emily Henry,Romance,2022,"A cutthroat literary agent on vacation in a small town keeps running into a brooding book editor, and their sharp banter turns into something more."
+58,The Love Hypothesis,Ali Hazelwood,Romance,2021,"A PhD candidate fakes a relationship with a stern professor to convince her best friend she's moved on, but the pretense becomes dangerously real."
+59,Ugly Love,Colleen Hoover,Romance,2014,"A young nurse agrees to a no-strings-attached relationship with a brooding pilot, but emotions prove impossible to keep out of the arrangement."
+60,The Rosie Project,Graeme Simsion,Romance,2013,A socially awkward genetics professor designs a questionnaire to find the perfect wife but falls for a woman who is completely wrong on paper.
+61,Wuthering Heights,Emily Bronte,Romance,1847,A passionate and destructive love story between Heathcliff and Catherine on the wild Yorkshire moors spanning two generations.
+62,Jane Eyre,Charlotte Bronte,Romance,1847,"An orphaned governess falls in love with her mysterious employer Mr. Rochester, only to discover a terrible secret hidden in his mansion."
+63,Normal People,Sally Rooney,Romance,2018,Two Irish teenagers from different social backgrounds navigate an intense on-and-off relationship through school and university years.
+64,The Time Traveler's Wife,Audrey Niffenegger,Romance,2003,A love story between a man with a genetic disorder that causes him to time travel unpredictably and the woman who must cope with his absences.
+65,Call Me by Your Name,Andre Aciman,Romance,2007,A seventeen-year-old boy falls deeply in love with a visiting scholar during a sun-drenched summer on the Italian Riviera.
+66,The Kite Runner,Khaled Hosseini,Fiction,2003,"A haunting tale of friendship, betrayal, and redemption set against the backdrop of a changing Afghanistan from monarchy to Taliban rule."
+67,The Book Thief,Markus Zusak,Fiction,2005,"Narrated by Death, the story of a young girl in Nazi Germany who steals books and shares them with neighbors during bombing raids."
+68,Life of Pi,Yann Martel,Fiction,2001,A young Indian boy survives 227 days stranded on a lifeboat in the Pacific Ocean with a Bengal tiger named Richard Parker.
+69,Beloved,Toni Morrison,Fiction,1987,A former slave is haunted by the ghost of her dead daughter in this powerful exploration of the trauma and legacy of slavery.
+70,The Alchemist,Paulo Coelho,Fiction,1988,A young Andalusian shepherd embarks on a journey to the Egyptian pyramids in search of treasure and discovers his personal legend.
+71,The Martian,Andy Weir,Science Fiction,2011,An astronaut stranded alone on Mars must use his ingenuity and wit to survive and signal Earth for rescue before his supplies run out.
+72,Brave New World,Aldous Huxley,Science Fiction,1932,"A dystopian society uses genetic engineering and conditioning to maintain social stability, until an outsider challenges its shallow happiness."
+73,Fahrenheit 451,Ray Bradbury,Science Fiction,1953,"In a future society where books are banned and firemen burn them, one fireman begins to question everything after meeting a curious girl."
+74,The Left Hand of Darkness,Ursula K. Le Guin,Science Fiction,1969,"An envoy from Earth visits a planet where inhabitants have no fixed gender, challenging assumptions about identity and society."
+75,Project Hail Mary,Andy Weir,Science Fiction,2021,An amnesiac astronaut wakes up alone on a spaceship and must save Earth from an extinction-level threat with the help of an alien companion.
+76,The Woman in the Window,A.J. Finn,Mystery,2018,An agoraphobic woman spying on her neighbors believes she witnesses a crime but struggles to convince anyone of what she saw.
+77,Big Little Lies,Liane Moriarty,Mystery,2014,"Three women in a wealthy coastal town become entangled in a murder investigation that unravels secrets of bullying, affairs, and domestic violence."
+78,In the Woods,Tana French,Mystery,2007,A detective investigates a child's murder in the same woods where his own childhood friends mysteriously disappeared twenty years ago.
+79,The Girl on the Train,Paula Hawkins,Mystery,2015,A woman who watches a perfect couple from her commuter train window becomes entangled in their lives after witnessing something shocking.
+80,Sharp Objects,Gillian Flynn,Mystery,2006,A journalist with a troubled past returns to her small hometown to cover the murders of two young girls and confronts her own dark history.
+81,Mistborn: The Final Empire,Brandon Sanderson,Fantasy,2006,A street thief discovers she has rare magical powers and joins a crew of rebels plotting to overthrow an immortal tyrant ruler.
+82,The Way of Kings,Brandon Sanderson,Fantasy,2010,"A war-torn world faces an ancient threat as a slave soldier, a scholar, and a highborn warrior discover their intertwined destinies."
+83,Circe,Madeline Miller,Fantasy,2018,"The story of the witch Circe from Greek mythology, banished to a remote island, who discovers her own power through encounters with gods and mortals."
+84,The Priory of the Orange Tree,Samantha Shannon,Fantasy,2019,A world divided between dragonriders and those who fear them must unite when an ancient evil stirs and threatens to consume everything.
+85,Piranesi,Susanna Clarke,Fantasy,2020,"A man lives in a vast mysterious house filled with endless halls and ocean tides, slowly uncovering the truth of who he is and how he got there."
+86,The Exorcist,William Peter Blatty,Horror,1971,A mother seeks the help of two priests to save her daughter from a terrifying demonic possession in their Georgetown home.
+87,Bird Box,Josh Malerman,Horror,2014,"A mother and her children navigate a post-apocalyptic world blindfolded, where seeing mysterious creatures outside drives people to fatal violence."
+88,House of Leaves,Mark Z. Danielewski,Horror,2000,"A family discovers their house is bigger on the inside than the outside, leading to a labyrinthine descent into madness and darkness."
+89,The Turn of the Screw,Henry James,Horror,1898,A governess becomes convinced that the two children in her care are being visited by malevolent ghosts of former servants.
+90,Pet Sematary,Stephen King,Horror,1983,"A family discovers a burial ground behind their new home that can bring the dead back to life, but what returns is never quite the same."
+91,Becoming,Michelle Obama,Non-Fiction,2018,"The memoir of the former First Lady of the United States, tracing her journey from the South Side of Chicago to the White House."
+92,The Body Keeps the Score,Bessel van der Kolk,Non-Fiction,2014,"A pioneering researcher reveals how trauma reshapes the body and brain, and offers new paths to recovery and healing."
+93,Outliers,Malcolm Gladwell,Non-Fiction,2008,"An investigation into the factors that contribute to high levels of success, from cultural legacies to the famous 10,000-hour rule."
+94,The Subtle Art of Not Giving a F*ck,Mark Manson,Self-Help,2016,A counterintuitive approach to living a good life by choosing what to care about and embracing limitations and uncertainty.
+95,You Are a Badass,Jen Sincero,Self-Help,2013,A humorous and inspiring guide to identifying and overcoming self-sabotaging beliefs and habits to create a life you love.
+96,Deep Work,Cal Newport,Self-Help,2016,"Rules for focused success in a distracted world, arguing that the ability to concentrate deeply is becoming increasingly rare and valuable."
+97,The Wright Brothers,David McCullough,History,2015,The dramatic story of two bicycle mechanics from Ohio who changed the world by achieving the first powered flight at Kitty Hawk.
+98,Genghis Khan and the Making of the Modern World,Jack Weatherford,History,2004,A reassessment of Genghis Khan as a visionary leader who connected East and West and shaped the modern world through trade and law.
+99,Astrophysics for People in a Hurry,Neil deGrasse Tyson,Science,2017,"A concise and accessible tour of the universe covering dark matter, quarks, the Big Bang, and humanity's place in the cosmos."
+100,The Sixth Extinction,Elizabeth Kolbert,Science,2014,"An exploration of the current mass extinction event caused by human activity, weaving field reports with the history of life on Earth."

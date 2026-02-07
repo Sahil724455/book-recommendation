@@ -1,0 +1,219 @@
+{% extends "base.html" %}
+{% block title %}Algorithm Comparison{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1><i class="fas fa-chart-bar" style="-webkit-text-fill-color:var(--accent);background:none;"></i> Algorithm Performance Comparison</h1>
+    <p>Side-by-side comparison of Content-Based Filtering vs. Collaborative Filtering (SVD & KNN)</p>
+</div>
+
+{% if results %}
+
+<!-- Winner Banner -->
+{% if results.winner %}
+<div class="card winner-card" style="margin-bottom:2rem; text-align:center; padding:1.5rem;">
+    <h2 style="color:#34D399; font-size:1.3rem;">
+        <i class="fas fa-trophy" style="color:#FBBF24; font-size:1.5rem;"></i>
+        Best Algorithm: {{ results.winner.name }}
+    </h2>
+    <p style="color:var(--text-muted); margin-top:0.5rem;">{{ results.winner.reason }}</p>
+</div>
+{% endif %}
+
+<!-- Metrics Summary Table -->
+<div class="card" style="margin-bottom:2rem;">
+    <h3 style="margin-bottom:1rem;"><i class="fas fa-table" style="color:var(--primary-light)"></i> Performance Metrics Summary</h3>
+    <div style="overflow-x:auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th style="text-align:center;">Content-Based<br><small>(TF-IDF)</small></th>
+                    <th style="text-align:center;">Collaborative<br><small>(SVD)</small></th>
+                    <th style="text-align:center;">Collaborative<br><small>(KNN)</small></th>
+                    <th style="text-align:center;">Best</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- RMSE -->
+                <tr>
+                    <td><strong>RMSE</strong> <small style="color:var(--text-muted);">(lower = better)</small></td>
+                    {% set cb_rmse = results.content_based.rmse %}
+                    {% set svd_rmse = results.collaborative_svd.rmse %}
+                    {% set knn_rmse = results.collaborative_knn.rmse %}
+                    <td style="text-align:center; {% if cb_rmse <= svd_rmse and cb_rmse <= knn_rmse %}color:#34D399; font-weight:700;{% endif %}">{{ cb_rmse }}</td>
+                    <td style="text-align:center; {% if svd_rmse <= cb_rmse and svd_rmse <= knn_rmse %}color:#34D399; font-weight:700;{% endif %}">{{ svd_rmse }}</td>
+                    <td style="text-align:center; {% if knn_rmse <= cb_rmse and knn_rmse <= svd_rmse %}color:#34D399; font-weight:700;{% endif %}">{{ knn_rmse }}</td>
+                    <td style="text-align:center;">
+                        {% if cb_rmse <= svd_rmse and cb_rmse <= knn_rmse %}<span class="badge badge-primary">Content-Based</span>
+                        {% elif svd_rmse <= knn_rmse %}<span class="badge badge-secondary">SVD</span>
+                        {% else %}<span class="badge badge-accent">KNN</span>{% endif %}
+                    </td>
+                </tr>
+                <!-- MAE -->
+                <tr>
+                    <td><strong>MAE</strong> <small style="color:var(--text-muted);">(lower = better)</small></td>
+                    {% set cb_mae = results.content_based.mae %}
+                    {% set svd_mae = results.collaborative_svd.mae %}
+                    {% set knn_mae = results.collaborative_knn.mae %}
+                    <td style="text-align:center; {% if cb_mae <= svd_mae and cb_mae <= knn_mae %}color:#34D399; font-weight:700;{% endif %}">{{ cb_mae }}</td>
+                    <td style="text-align:center; {% if svd_mae <= cb_mae and svd_mae <= knn_mae %}color:#34D399; font-weight:700;{% endif %}">{{ svd_mae }}</td>
+                    <td style="text-align:center; {% if knn_mae <= cb_mae and knn_mae <= svd_mae %}color:#34D399; font-weight:700;{% endif %}">{{ knn_mae }}</td>
+                    <td style="text-align:center;">
+                        {% if cb_mae <= svd_mae and cb_mae <= knn_mae %}<span class="badge badge-primary">Content-Based</span>
+                        {% elif svd_mae <= knn_mae %}<span class="badge badge-secondary">SVD</span>
+                        {% else %}<span class="badge badge-accent">KNN</span>{% endif %}
+                    </td>
+                </tr>
+                <!-- Training Time -->
+                <tr>
+                    <td><strong>Training Time</strong> <small style="color:var(--text-muted);">(lower = better)</small></td>
+                    {% set cb_tt = results.content_based.train_time %}
+                    {% set svd_tt = results.collaborative_svd.train_time %}
+                    {% set knn_tt = results.collaborative_knn.train_time %}
+                    <td style="text-align:center; {% if cb_tt <= svd_tt and cb_tt <= knn_tt %}color:#34D399; font-weight:700;{% endif %}">{{ cb_tt }}s</td>
+                    <td style="text-align:center; {% if svd_tt <= cb_tt and svd_tt <= knn_tt %}color:#34D399; font-weight:700;{% endif %}">{{ svd_tt }}s</td>
+                    <td style="text-align:center; {% if knn_tt <= cb_tt and knn_tt <= svd_tt %}color:#34D399; font-weight:700;{% endif %}">{{ knn_tt }}s</td>
+                    <td style="text-align:center;">
+                        {% if cb_tt <= svd_tt and cb_tt <= knn_tt %}<span class="badge badge-primary">Content-Based</span>
+                        {% elif svd_tt <= knn_tt %}<span class="badge badge-secondary">SVD</span>
+                        {% else %}<span class="badge badge-accent">KNN</span>{% endif %}
+                    </td>
+                </tr>
+                <!-- Prediction Time -->
+                <tr>
+                    <td><strong>Avg Prediction Time</strong> <small style="color:var(--text-muted);">(lower = better)</small></td>
+                    {% set cb_pt = results.content_based.avg_prediction_time %}
+                    {% set svd_pt = results.collaborative_svd.avg_prediction_time %}
+                    {% set knn_pt = results.collaborative_knn.avg_prediction_time %}
+                    <td style="text-align:center; {% if cb_pt <= svd_pt and cb_pt <= knn_pt %}color:#34D399; font-weight:700;{% endif %}">{{ "%.6f"|format(cb_pt) }}s</td>
+                    <td style="text-align:center; {% if svd_pt <= cb_pt and svd_pt <= knn_pt %}color:#34D399; font-weight:700;{% endif %}">{{ "%.6f"|format(svd_pt) }}s</td>
+                    <td style="text-align:center; {% if knn_pt <= cb_pt and knn_pt <= svd_pt %}color:#34D399; font-weight:700;{% endif %}">{{ "%.6f"|format(knn_pt) }}s</td>
+                    <td style="text-align:center;">
+                        {% if cb_pt <= svd_pt and cb_pt <= knn_pt %}<span class="badge badge-primary">Content-Based</span>
+                        {% elif svd_pt <= knn_pt %}<span class="badge badge-secondary">SVD</span>
+                        {% else %}<span class="badge badge-accent">KNN</span>{% endif %}
+                    </td>
+                </tr>
+                <!-- CV RMSE (Collaborative only) -->
+                {% if results.collaborative_svd.cv_rmse is defined %}
+                <tr>
+                    <td><strong>5-Fold CV RMSE</strong> <small style="color:var(--text-muted);">(lower = better)</small></td>
+                    <td style="text-align:center; color:var(--text-muted);">N/A</td>
+                    <td style="text-align:center;">{{ results.collaborative_svd.cv_rmse }} &plusmn; {{ results.collaborative_svd.cv_rmse_std }}</td>
+                    <td style="text-align:center;">{{ results.collaborative_knn.cv_rmse }} &plusmn; {{ results.collaborative_knn.cv_rmse_std }}</td>
+                    <td style="text-align:center;">
+                        {% if results.collaborative_svd.cv_rmse <= results.collaborative_knn.cv_rmse %}
+                        <span class="badge badge-secondary">SVD</span>
+                        {% else %}<span class="badge badge-accent">KNN</span>{% endif %}
+                    </td>
+                </tr>
+                {% endif %}
+                <!-- Total Predictions -->
+                <tr>
+                    <td><strong>Test Predictions</strong></td>
+                    <td style="text-align:center;">{{ results.content_based.total_predictions }}</td>
+                    <td style="text-align:center;">{{ results.collaborative_svd.total_predictions }}</td>
+                    <td style="text-align:center;">{{ results.collaborative_knn.total_predictions }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Charts Section -->
+<h2 style="font-size:1.3rem; font-weight:700; margin-bottom:1.5rem;">
+    <i class="fas fa-chart-area" style="color:var(--secondary);"></i> Visual Comparison Charts
+</h2>
+
+{% if results.charts %}
+<!-- Overview -->
+<div class="card" style="margin-bottom:1.5rem;">
+    <h3 style="margin-bottom:1rem;">Overview: Accuracy & Efficiency</h3>
+    <img src="/{{ results.charts.overview }}" alt="Overview Comparison" class="chart-img">
+</div>
+
+<div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="card">
+        <h3 style="margin-bottom:1rem;">RMSE Comparison</h3>
+        <img src="/{{ results.charts.rmse }}" alt="RMSE Comparison" class="chart-img">
+    </div>
+    <div class="card">
+        <h3 style="margin-bottom:1rem;">MAE Comparison</h3>
+        <img src="/{{ results.charts.mae }}" alt="MAE Comparison" class="chart-img">
+    </div>
+</div>
+
+<div class="grid-2" style="margin-bottom:1.5rem;">
+    <div class="card">
+        <h3 style="margin-bottom:1rem;">Training Time</h3>
+        <img src="/{{ results.charts.training_time }}" alt="Training Time" class="chart-img">
+    </div>
+    <div class="card">
+        <h3 style="margin-bottom:1rem;">Prediction Time</h3>
+        <img src="/{{ results.charts.prediction_time }}" alt="Prediction Time" class="chart-img">
+    </div>
+</div>
+
+<div class="card" style="margin-bottom:1.5rem;">
+    <h3 style="margin-bottom:1rem;">Performance Heatmap</h3>
+    <img src="/{{ results.charts.heatmap }}" alt="Heatmap" class="chart-img">
+</div>
+{% endif %}
+
+<!-- Analysis -->
+<div class="grid-3" style="margin-top:2rem;">
+    <div class="card" style="border-top:3px solid var(--primary);">
+        <h3 style="font-size:1rem; margin-bottom:0.75rem;"><i class="fas fa-file-alt" style="color:var(--primary-light)"></i> Content-Based</h3>
+        <ul style="font-size:0.85rem; color:var(--text-muted); padding-left:1rem; line-height:2;">
+            <li>Uses book features (text) for similarity</li>
+            <li>Fast training with TF-IDF vectorization</li>
+            <li>No cold-start for new items</li>
+            <li>Limited to item features only</li>
+            <li>Best for: small datasets, new items</li>
+        </ul>
+    </div>
+    <div class="card" style="border-top:3px solid var(--secondary);">
+        <h3 style="font-size:1rem; margin-bottom:0.75rem;"><i class="fas fa-project-diagram" style="color:#34D399"></i> Collaborative (SVD)</h3>
+        <ul style="font-size:0.85rem; color:var(--text-muted); padding-left:1rem; line-height:2;">
+            <li>Matrix factorization finds latent factors</li>
+            <li>Captures complex user preferences</li>
+            <li>Better generalization with regularization</li>
+            <li>Requires sufficient user ratings</li>
+            <li>Best for: large datasets, personalization</li>
+        </ul>
+    </div>
+    <div class="card" style="border-top:3px solid var(--accent);">
+        <h3 style="font-size:1rem; margin-bottom:0.75rem;"><i class="fas fa-users" style="color:#FBBF24"></i> Collaborative (KNN)</h3>
+        <ul style="font-size:0.85rem; color:var(--text-muted); padding-left:1rem; line-height:2;">
+            <li>Finds k most similar users</li>
+            <li>Simple and interpretable</li>
+            <li>No model training (lazy learner)</li>
+            <li>Can be slow with very large data</li>
+            <li>Best for: interpretability, moderate data</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Re-run -->
+<div style="text-align:center; margin-top:2rem;">
+    <a href="/run_comparison" class="btn btn-primary btn-lg">
+        <i class="fas fa-sync"></i> Re-run Comparison
+    </a>
+    <a href="/" class="btn btn-outline btn-lg" style="margin-left:0.5rem;">
+        <i class="fas fa-home"></i> Back to Home
+    </a>
+</div>
+
+{% else %}
+<div class="card" style="text-align:center; padding:3rem;">
+    <i class="fas fa-chart-bar" style="font-size:3rem; color:var(--text-muted); margin-bottom:1rem;"></i>
+    <h3>No Comparison Results Yet</h3>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem;">Run the comparison to evaluate both algorithms.</p>
+    <a href="/run_comparison" class="btn btn-primary btn-lg">
+        <i class="fas fa-play"></i> Run Comparison Now
+    </a>
+</div>
+{% endif %}
+{% endblock %}

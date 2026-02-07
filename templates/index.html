@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div style="text-align:center; padding: 2rem 0 3rem;">
+    <h1 style="font-size:2.5rem; font-weight:800; background:linear-gradient(135deg,#818CF8,#34D399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+        <i class="fas fa-brain" style="-webkit-text-fill-color:#818CF8;"></i>
+        ML-Based Book Recommendation System
+    </h1>
+    <p style="color:var(--text-muted); font-size:1.1rem; max-width:700px; margin:1rem auto 0;">
+        Get personalized book recommendations powered by two machine learning algorithms.
+        Compare their accuracy and efficiency in real-time.
+    </p>
+</div>
+
+<!-- Stats -->
+<div class="grid-4" style="margin-bottom: 2.5rem;">
+    <div class="card stat-card">
+        <div class="stat-value">{{ stats.total_books }}</div>
+        <div class="stat-label"><i class="fas fa-book"></i> Books</div>
+    </div>
+    <div class="card stat-card">
+        <div class="stat-value">{{ stats.total_users }}</div>
+        <div class="stat-label"><i class="fas fa-users"></i> Users</div>
+    </div>
+    <div class="card stat-card">
+        <div class="stat-value">{{ stats.total_ratings }}</div>
+        <div class="stat-label"><i class="fas fa-star"></i> Ratings</div>
+    </div>
+    <div class="card stat-card">
+        <div class="stat-value">{{ stats.total_genres }}</div>
+        <div class="stat-label"><i class="fas fa-tags"></i> Genres</div>
+    </div>
+</div>
+
+<!-- Recommendation Form -->
+<div class="card" style="max-width: 800px; margin: 0 auto 2.5rem; padding: 2rem;">
+    <h2 style="font-size:1.4rem; font-weight:700; margin-bottom:0.3rem;">
+        <i class="fas fa-magic" style="color:var(--primary-light)"></i> Get Recommendations
+    </h2>
+    <p style="color:var(--text-muted); margin-bottom:1.5rem;">Select a user and algorithm to generate personalized book suggestions.</p>
+
+    <form action="/recommend" method="POST">
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:1rem; margin-bottom:1.5rem;">
+            <div>
+                <label for="user_id">User ID</label>
+                <select name="user_id" id="user_id" style="width:100%;">
+                    {% for uid in users %}
+                    <option value="{{ uid }}">User {{ uid }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="algorithm">Algorithm</label>
+                <select name="algorithm" id="algorithm" style="width:100%;">
+                    <option value="content_based">Content-Based (TF-IDF)</option>
+                    <option value="collaborative_svd">Collaborative (SVD)</option>
+                    <option value="collaborative_knn">Collaborative (KNN)</option>
+                </select>
+            </div>
+            <div>
+                <label for="n_recommendations">Number of Results</label>
+                <select name="n_recommendations" id="n_recommendations" style="width:100%;">
+                    <option value="5">5 books</option>
+                    <option value="10" selected>10 books</option>
+                    <option value="15">15 books</option>
+                    <option value="20">20 books</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+            <i class="fas fa-search"></i> Generate Recommendations
+        </button>
+    </form>
+</div>
+
+<!-- Algorithm Overview -->
+<div class="page-header">
+    <h2 style="font-size:1.5rem; font-weight:700;">
+        <i class="fas fa-cogs" style="color:var(--accent)"></i> Algorithms Implemented
+    </h2>
+</div>
+
+<div class="grid-2" style="margin-bottom: 2rem;">
+    <!-- Content-Based -->
+    <div class="card" style="border-top: 3px solid var(--primary);">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div style="width:45px;height:45px;border-radius:10px;background:rgba(79,70,229,0.15);display:flex;align-items:center;justify-content:center;">
+                <i class="fas fa-file-alt" style="color:var(--primary-light);font-size:1.2rem;"></i>
+            </div>
+            <div>
+                <h3 style="font-weight:700;">Content-Based Filtering</h3>
+                <span class="badge badge-primary">TF-IDF + Cosine Similarity</span>
+            </div>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">
+            Recommends books similar to what a user has liked, based on book features (genre, author, description).
+        </p>
+        <div style="font-size:0.85rem;">
+            <p><strong>How it works:</strong></p>
+            <ul style="padding-left:1.2rem; color:var(--text-muted); margin-top:0.3rem;">
+                <li>Combines genre + author + description into feature text</li>
+                <li>Converts text to numerical vectors using TF-IDF</li>
+                <li>Computes cosine similarity between book pairs</li>
+                <li>Ranks unseen books by similarity to user's favorites</li>
+            </ul>
+        </div>
+        <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <span class="badge badge-secondary">Fast</span>
+            <span class="badge badge-secondary">Works with small data</span>
+            <span class="badge badge-secondary">No cold start (items)</span>
+        </div>
+    </div>
+
+    <!-- Collaborative Filtering -->
+    <div class="card" style="border-top: 3px solid var(--secondary);">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+            <div style="width:45px;height:45px;border-radius:10px;background:rgba(5,150,105,0.15);display:flex;align-items:center;justify-content:center;">
+                <i class="fas fa-users" style="color:#34D399;font-size:1.2rem;"></i>
+            </div>
+            <div>
+                <h3 style="font-weight:700;">Collaborative Filtering</h3>
+                <span class="badge badge-secondary">KNN + SVD Matrix Factorization</span>
+            </div>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1rem;">
+            Finds users with similar tastes and recommends books they enjoyed. Uses both KNN and SVD approaches.
+        </p>
+        <div style="font-size:0.85rem;">
+            <p><strong>How it works:</strong></p>
+            <ul style="padding-left:1.2rem; color:var(--text-muted); margin-top:0.3rem;">
+                <li>KNN: Finds k most similar users by rating patterns</li>
+                <li>SVD: Decomposes user-item matrix into latent factors</li>
+                <li>Predicts ratings for all unseen books</li>
+                <li>Returns top-N books by predicted rating</li>
+            </ul>
+        </div>
+        <div style="margin-top:1rem; display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <span class="badge badge-accent">High accuracy</span>
+            <span class="badge badge-accent">Personalized</span>
+            <span class="badge badge-accent">Industry standard</span>
+        </div>
+    </div>
+</div>
+
+<!-- Quick links -->
+<div style="text-align:center; margin-top:1rem;">
+    <a href="/compare" class="btn btn-accent btn-lg">
+        <i class="fas fa-chart-bar"></i> View Algorithm Comparison
+    </a>
+    <a href="/books" class="btn btn-outline btn-lg" style="margin-left:0.5rem;">
+        <i class="fas fa-book"></i> Browse All Books
+    </a>
+</div>
+{% endblock %}
